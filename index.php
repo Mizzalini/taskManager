@@ -1,6 +1,5 @@
 <?php
 include_once 'config_global.php';
-include_once 'process_tasks.php';
 
 if (!isset($_SESSION['userLogged'])) {
     header('Location: login.php');
@@ -17,7 +16,7 @@ if (!isset($_SESSION['userLogged'])) {
 <body>
     <h1>Task Manager</h1>
 
-    <form action="" method="POST">
+    <form action="process_tasks.php" method="POST">
         <input type="text" name="task" placeholder="Add a new task" required>
         <button type="submit">Add Task</button>
     </form>
@@ -26,22 +25,22 @@ if (!isset($_SESSION['userLogged'])) {
         <h2>New Task Added:</h2>
         <?php foreach ($_SESSION['tasks'] as $index => $task): ?>
             <li style="margin-bottom: 5px">
-                <?= $task['task']; ?>
+                <?= htmlspecialchars($task['task'], ENT_QUOTES, 'UTF-8'); ?>
                 <?php if (!$task['completed']): ?>
-                    <form action="" method="POST" style="display: inline;">
+                    <form action="process_tasks.php" method="POST" style="display: inline;">
                         <input type="hidden" name="index" value="<?= $index ?>">
                         <button type="submit" name="completed">Mark completed</button>
                     </form>
                 <?php else: ?>
                     <strong style="color:green">concluded</strong>
                 <?php endif; ?>
-                <form action="" method="POST" style="display: inline;">
+                <form action="process_tasks.php" method="POST" style="display: inline;">
                     <input type="hidden" name="index" value="<?= $index ?>">
                     <button type="submit" name="delete">delete</button>
                 </form>
             </li>
         <?php endforeach; ?>
-        <form action="" method="POST" style="margin-top: 25px;">
+        <form action="process_tasks.php" method="POST" style="margin-top: 25px;">
             <button type="submit" name="clear">Clear All</button>
         </form>
     <?php endif; ?>
