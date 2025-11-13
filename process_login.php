@@ -52,7 +52,7 @@ function validate(string $user, string $pass): bool|string {
         return "User and password are required.";
     }
 
-    if (!hash_equals($user, USER) || !hash_equals($pass, PASS)) {
+    if (!hash_equals($user, USER) || !password_verify($pass, PASS)) {
         return "User or password is incorrect.";
     }
 
