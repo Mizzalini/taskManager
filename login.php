@@ -1,8 +1,14 @@
 <?php
-include_once 'process_login.php';
+include_once 'config_global.php';
+
+$error = $_SESSION['error'] ?? '';
+unset($_SESSION['error']);
 
 $token = bin2hex(random_bytes(32));
-setcookie("csrf_token", $token);
+setcookie("csrf_token", $token, [
+    'httponly' => true,
+    'samesite' => 'Strict'
+]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +19,7 @@ setcookie("csrf_token", $token);
     </head>
     <body>
         <h1>Login</h1>
-        <form action="login.php" method="POST">
+        <form action="process_login.php" method="POST">
             <input type="hidden" name="csrf_token" value="<?= $token ?>">
             <input type="text" name="user" placeholder="User" required>
             <input type="password" name="pass" placeholder="*******" required>

@@ -2,6 +2,7 @@
 include_once 'config_global.php';
 if (!isset($_SESSION['userLogged'])) {
     header('Location: login.php');
+    exit;
 }
 ?>
 <!DOCTYPE html>
