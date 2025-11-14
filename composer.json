@@ -1,0 +1,9 @@
+{
+    "name": "mizzalini/task-manager",
+    "description": "A simple PHP task manager",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
