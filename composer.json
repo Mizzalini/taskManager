@@ -1,0 +1,14 @@
+{
+    "name": "mizzalini/task-manager",
+    "autoload": {
+        "psr-4": {
+            "TaskManager\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mizzalini"
+        }
+    ],
+    "require": {}
+}
