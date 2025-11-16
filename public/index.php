@@ -1,6 +1,5 @@
 <?php
-
-require_once __DIR__ . '/../bootstrap.php';
+include_once 'config_global.php';
 
 if (!isset($_SESSION['userLogged'])) {
     header('Location: login.php');

@@ -1,6 +1,5 @@
 <?php
-
-require_once __DIR__ . '/../bootstrap.php';
+include_once 'config_global.php';
 
 $error = $_SESSION['error'] ?? '';
 unset($_SESSION['error']);
