@@ -11,11 +11,11 @@ namespace TaskManager\System;
 class View {
 
     /**
+     * Renders a view file and returns its output as a string
      * 
-     * 
-     * @param string $viewFile
-     * @param array $variables
-     * @return string|false
+     * @param string $viewFile The path to the view/template file
+     * @param array $variables An associative array of variables to make available to the view file
+     * @return string|false The rendered content as a string, or 'false' on failure
      */
     public static function render(string $viewFile, array $variables = []): string|false {
         \ob_start();
