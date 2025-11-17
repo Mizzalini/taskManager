@@ -16,7 +16,7 @@ abstract class Controller {
     // Use Reflection to get the short name (e.g., "HomeController" becomes "home")
     public function __construct() {
         if (!$this->controllerName) {
-            $this->$controllerName = \strtolower((new \ReflectionClass($this))->getShortName());
+            $this->controllerName = \strtolower((new \ReflectionClass($this))->getShortName());
         }
     }
 
@@ -39,7 +39,7 @@ abstract class Controller {
         }
     }
 
-    protected function renderError(Throwable $exception): string|false {
+    protected function renderError(\Throwable $exception): string|false {
         $viewErrorPath = $this->controllerViewPath . 'error/index.php';
         $viewError = [
             'error' => $exception->getMessage(),
