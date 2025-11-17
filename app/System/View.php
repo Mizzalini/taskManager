@@ -24,7 +24,7 @@ class View {
         try {
             $filePath = \getcwd() . '/' . $viewFile;
             if (!\file_exists($filePath)) {
-                throw new Exception("FilePath: {$filePath} does not exist");
+                throw new \Exception("FilePath: {$filePath} does not exist");
             }
 
             include $filePath;
