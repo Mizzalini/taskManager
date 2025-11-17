@@ -12,7 +12,13 @@ use TaskManager\Traits\Singleton;
 class App {
     use Singleton;
 
-    public function run(): void {
-        
+    /**
+     * Executes the router to handle the current request
+     * 
+     * @return mixed The output from the router's run method
+     */
+    public function run(): mixed {
+        $router = Router::getInstance();
+        return $router->run();
     }
 }
