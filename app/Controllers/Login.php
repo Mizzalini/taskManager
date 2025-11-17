@@ -10,7 +10,7 @@ use TaskManager\Models\User;
  */
 class Login extends Controller {
 
-    public function index(array $data = []): string|false {
+    public function index(array $data = [], string $layout = null): string|false {
         return $this->render('layouts/login.php');
     }
 
