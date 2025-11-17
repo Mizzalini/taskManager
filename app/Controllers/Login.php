@@ -3,6 +3,7 @@
 namespace TaskManager\Controllers;
 use TaskManager\System\Controller;
 use TaskManager\System\Redirect;
+use TaskManager\Models\User;
 
 /**
  * Login controller
