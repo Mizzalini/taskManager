@@ -39,7 +39,7 @@ class Router {
      * @return string The current request path
      */
     public function getCurrentPath(): string {
-        return \parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?? '/';
+        return \parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     }
 
     private function init(): void {

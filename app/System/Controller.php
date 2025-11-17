@@ -15,7 +15,7 @@ abstract class Controller {
 
     // Use Reflection to get the short name (e.g., "HomeController" becomes "home")
     public function __construct() {
-        if (!$this->controllerName) {
+        if (!isset($this->controllerName)) {
             $this->controllerName = \strtolower((new \ReflectionClass($this))->getShortName());
         }
     }

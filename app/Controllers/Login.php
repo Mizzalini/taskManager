@@ -14,7 +14,7 @@ class Login extends Controller {
         return $this->render('layouts/login.php');
     }
 
-    /**
+    /** 
      * Handles the login logic when a form is submitted
      */
     public function onLogin(): void {
