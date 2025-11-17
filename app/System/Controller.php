@@ -21,10 +21,12 @@ abstract class Controller {
     }
 
     /**
-     * Renders the default "index" view for this controller
-     * 
-     * @param array $data Associative array of variables to pass to the view
-     * @return string|false The rendered HTML as a string, or false on failure
+     * Renders the index view for the current controller.
+     *
+     * @param array $data Optional associative array of data to be passed to the view.
+     *                     Default is an empty array.
+     *
+     * @return string|false The rendered view content as a string, or false if rendering fails.
      */
     public function index(array $data = []): string|false {
         $viewPath = $this->controllerViewPath . $this->controllerName . '/index.php';
