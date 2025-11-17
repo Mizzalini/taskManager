@@ -44,7 +44,7 @@ class Task {
      * @param int $index The index of the task to be deleted.
      * @return void
      */
-    public function deleteTask(int $index): void {
+    public function deleteTaskByIndex(int $index): void {
         $tasks = $_SESSION['tasks'];
 
         if (isset($tasks[$index])) {

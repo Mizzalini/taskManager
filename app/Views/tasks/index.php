@@ -1,7 +1,7 @@
 <h1>Task Manager</h1>
 
 <form action="/tasks/create" method="POST">
-    <input type="text" name="title" placeholder="Add a new task" required>
+    <input type="text" name="task" placeholder="Add a new task" required>
     <button type="submit">Add Task</button>
 </form>
 
@@ -22,7 +22,7 @@
                 <form action="/tasks/completed" method="POST" style="display: inline">
                     <input type="hidden" name="index" value="<?= $index ?>">
                     <input type="hidden" name="action" value="markTaskAsCompleted">
-                    <button type="submit">Mark as Completed</button>
+                    <button type="submit" name="completed">Mark as Completed</button>
                 </form>
             <?php else: ?>
                 <strong style="color: green">Completed</strong>
