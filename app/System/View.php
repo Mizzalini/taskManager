@@ -34,4 +34,17 @@ class View {
 
         return \ob_get_clean();
     }
+
+    /**
+     * Renders a view file within a layout and returns its output as a string
+     * 
+     * @param string $viewFile The path to the view/template file
+     * @param array $variables An associative array of variables to make available to the view file
+     * @param string $layout The path to the layout file
+     * @return string|false The rendered content as a string, or 'false' on failure
+     */
+    public static function renderWithLayout(string $viewFile, array $variables = [], string $layout = 'layouts/index.php'): string|false {
+        $content = self::render($viewFile, $variables);
+        return self::render($layout, ['contentLayout' => $content] + $variables);
+    }
 }
