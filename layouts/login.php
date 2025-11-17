@@ -8,7 +8,6 @@
 <body>
     <h1>Login</h1>
     <form action="/login/submit" method="POST">
-        <input type="hidden" name="csrf_token" value="<?= $token ?>">
         <input type="text" name="user" placeholder="User" required>
         <input type="password" name="pass" placeholder="*******" required>
         <button type="submit" name="login">login</button>
